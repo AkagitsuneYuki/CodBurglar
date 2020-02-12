@@ -29,7 +29,13 @@ public class EnemyShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckIfCanHitPlayer();
+
+
+    }
+
+    private void CheckIfCanHitPlayer()
+    {
         if (Vector3.Distance(transform.position, player.transform.position) <= rayLength)
         {
             transform.LookAt(player.transform);
@@ -63,11 +69,15 @@ public class EnemyShoot : MonoBehaviour
         {
             if (rayHit.transform.gameObject.tag == "Player")
             {
-                rayHit.transform.gameObject.GetComponent<PlayerData>().DecreaseHP(damage);
+                int i = Mathf.FloorToInt(Random.Range(1f, 101f));
+                if(i % 3 != 0)
+                {
+                    rayHit.transform.gameObject.GetComponent<PlayerData>().DecreaseHP(damage + (1 % 5));
+                }
             }
         }
 
-        print(gameObject.name + " shot their load");
+        //print(gameObject.name + " shot their load");
     }
 
     IEnumerator ShootyAI()
@@ -76,7 +86,7 @@ public class EnemyShoot : MonoBehaviour
         {
             if (canHitPlayer)
             {
-                print("can hit");
+                //print("can hit");
                 OnShoot();
             }
             yield return new WaitForSeconds(Random.Range(1,3));

@@ -20,6 +20,38 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(Input.GetAxis("Mouse ScrollWheel"));
+
+        if(Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            ChangeWeapon((int)(Input.GetAxis("Mouse ScrollWheel") * 10));
+        }
+
+    }
+
+    private void ChangeWeapon(int i)
+    {
+        weaponEquipped += i;
+        if (weaponEquipped >= weapons.Length)
+        {
+            weaponEquipped = 0;
+        }
+        else if (weaponEquipped < 0)
+        {
+            weaponEquipped = weapons.Length - 1;
+        }
+
+        for(int k = 0; k < weapons.Length; k++)
+        {
+            if (k == weaponEquipped)
+            {
+                weapons[k].SetActive(true);
+            }
+            else
+            {
+                weapons[k].SetActive(false);
+            }
+        }
         
     }
 
