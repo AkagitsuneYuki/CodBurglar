@@ -11,10 +11,13 @@ public class GrenadeExplode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody>().rotation = transform.rotation;
+        player = GameObject.FindGameObjectWithTag("MainCamera");
         transform.rotation = player.transform.rotation;
-        GetComponent<Rigidbody>().AddForce(Vector3.up * 100);
-        GetComponent<Rigidbody>().AddForce(transform.forward * 750);
-        //GetComponent<Rigidbody>().rotation = transform.rotation;
+        GetComponent<Rigidbody>().AddForceAtPosition(player.transform.forward * 1000, player.transform.position + player.transform.forward * 3);
+        GetComponent<Rigidbody>().AddForce(Vector3.up*300);
+
+        Destroy(gameObject, 2);
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class GrenadeExplode : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        //Destroy(gameObject, 2);
     }
 
 

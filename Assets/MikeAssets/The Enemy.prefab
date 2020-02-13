@@ -254,11 +254,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   rayLength: 50
+  ammo: 0
+  maxAmmo: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 51
   player: {fileID: 0}
   sprite: {fileID: 7587257191357968115}
+  shootSprite: {fileID: 21300000, guid: cbb38d86ada74d140be78bb909437788, type: 3}
   impactParticles: {fileID: 7448973247351096953, guid: 7ec392aa38c1f1746a43e34cbac1437e,
     type: 3}
   shootSound: {fileID: 8300000, guid: 52992487816ff5b40a9e2e689b096ffd, type: 3}

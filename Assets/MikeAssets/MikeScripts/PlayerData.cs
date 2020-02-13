@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour
 {
-    [SerializeField] private int hp = 20;
+    [SerializeField] private int hp = 50;
+    [SerializeField] private int maxHP = 50;
 
 
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class PlayerData : MonoBehaviour
 
     public void DecreaseHP(int damage)
     {
-        hp -= damage;
+        //hp -= damage;     //comment this out when debugging
         if(hp < 0)
         {
             hp = 0;
@@ -44,4 +45,8 @@ public class PlayerData : MonoBehaviour
         return hp;
     }
 
+    public int GetMaxHP()
+    {
+        return maxHP;
+    }
 }

@@ -8,11 +8,16 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float rayLength;
 
+    [SerializeField] private int ammo;
+    [SerializeField] private int maxAmmo;
+
     private RaycastHit rayHit;
     public LayerMask layerMask;
 
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject sprite;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject sprite;
+    [SerializeField] private Sprite shootSprite;
+    private Sprite defaultSprite;
 
     [SerializeField] private GameObject impactParticles;
     private GameObject particleRef;
@@ -23,6 +28,7 @@ public class EnemyShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultSprite = sprite.GetComponent<SpriteRenderer>().sprite;
         StartCoroutine(ShootyAI());
     }
 
@@ -30,8 +36,11 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         CheckIfCanHitPlayer();
+    }
 
-
+    public bool GetCanHitplayer()
+    {
+        return canHitPlayer;
     }
 
     private void CheckIfCanHitPlayer()
@@ -39,11 +48,18 @@ public class EnemyShoot : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= rayLength)
         {
             transform.LookAt(player.transform);
-            if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
+            if(ammo > 0)
             {
-                if (rayHit.transform.gameObject.tag == "Player")
+                if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
                 {
-                    canHitPlayer = true;
+                    if (rayHit.transform.gameObject.tag == "Player")
+                    {
+                        canHitPlayer = true;
+                    }
+                    else
+                    {
+                        canHitPlayer = false;
+                    }
                 }
                 else
                 {
@@ -59,10 +75,15 @@ public class EnemyShoot : MonoBehaviour
         {
             canHitPlayer = false;
         }
+        transform.rotation = transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
     }
 
     private void OnShoot()
     {
+        sprite.GetComponent<SpriteRenderer>().sprite = shootSprite;
+        ammo--;
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().pitch = Random.Range(1, 3);
         GetComponent<AudioSource>().PlayOneShot(shootSound);
 
         if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
@@ -76,8 +97,6 @@ public class EnemyShoot : MonoBehaviour
                 }
             }
         }
-
-        //print(gameObject.name + " shot their load");
     }
 
     IEnumerator ShootyAI()
@@ -87,9 +106,25 @@ public class EnemyShoot : MonoBehaviour
             if (canHitPlayer)
             {
                 //print("can hit");
+                
                 OnShoot();
+                yield return new WaitForSeconds(0.5f);
+                sprite.GetComponent<SpriteRenderer>().sprite = defaultSprite;
             }
-            yield return new WaitForSeconds(Random.Range(1,3));
+            else
+            {
+                sprite.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+            }
+
+            if (ammo == 0)
+            {
+                yield return new WaitForSeconds(Random.Range(3, 5));
+                ammo = maxAmmo;
+            }
+            else
+            {
+                yield return new WaitForSeconds(Random.Range((1 / 20), 1f));
+            }
         }
     }
 

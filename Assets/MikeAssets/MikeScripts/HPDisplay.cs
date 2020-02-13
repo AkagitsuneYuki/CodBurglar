@@ -15,7 +15,7 @@ public class HPDisplay : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         if(player == null)
         {
-            print("wtf?");
+            print("wtf? cannot find player!");
         }
     }
 
@@ -24,7 +24,7 @@ public class HPDisplay : MonoBehaviour
     {
         if(player != null)
         {
-            text.SetText("HP: " + player.GetComponent<PlayerData>().GetHP() + "/20");
+            text.SetText("HP: " + player.GetComponent<PlayerData>().GetHP() + "/" + player.GetComponent<PlayerData>().GetMaxHP());
         }
         else
         {

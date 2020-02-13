@@ -69,24 +69,42 @@ public class Enemy : MonoBehaviour
 
     void FollowPlayer()
     {
-        
-
-
         if(target != null)
         {
-            Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
-            Vector2 playerPos = new Vector2(target.transform.position.x, target.transform.position.z);
 
-            float dis = Vector2.Distance(curPos, playerPos);
-            if(dis <= rayLength/3 || dis >= rayLength * 1.25f)
+            if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
             {
-                navMeshAgent.SetDestination(transform.position);
-                
+                if (rayHit.transform.gameObject.tag == "Player")
+                {
+                    Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
+                    Vector2 playerPos = new Vector2(target.transform.position.x, target.transform.position.z);
+
+                    float dis = Vector2.Distance(curPos, playerPos);
+                    if (dis <= rayLength / 3 || dis >= rayLength * 1.25f)
+                    {
+                        if (GetComponent<EnemyShoot>().GetCanHitplayer())
+                        {
+                            navMeshAgent.SetDestination(transform.position);
+                        }
+                        else
+                        {
+                            if (dis >= 3f)
+                            {
+                                navMeshAgent.SetDestination(target.transform.position);
+                            }
+                            else
+                            {
+                                navMeshAgent.SetDestination(transform.position);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        navMeshAgent.SetDestination(target.transform.position);
+                    }
+                }
             }
-            else
-            {
-                navMeshAgent.SetDestination(target.transform.position);
-            }
+
             
         }
         else
