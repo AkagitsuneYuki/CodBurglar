@@ -13,27 +13,37 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject impactParticles;
     private GameObject particleRef;
     [SerializeField] private AudioClip shootSound;
+
+    [SerializeField] private GameObject gun;
+
  
     private void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * rayLength);
-
-        if (Input.GetButtonDown("Fire1"))
+        if (gun != null && gun.activeSelf)
         {
-            GetComponent<AudioSource>().PlayOneShot(shootSound);
+            Vector3 forwardPos = (transform.forward * rayLength) + (transform.right * Random.Range(-0.5f, 0.5f)) + (transform.up * Random.Range(-0.5f, 0.5f));
 
-            if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
+            Debug.DrawRay(transform.position, forwardPos);
+
+            if (Input.GetButtonDown("Fire1"))
             {
-                particleRef = Instantiate(impactParticles, rayHit.point, Quaternion.identity);
-                Destroy(particleRef, 0.5f);
-                
-                if (rayHit.transform.gameObject.tag == "Enemy")
+                GetComponent<AudioSource>().PlayOneShot(shootSound);
+
+                if (Physics.Raycast(transform.position, forwardPos, out rayHit, rayLength, layerMask))
                 {
-                    //This is where the enemy takes damage
-                    rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                    particleRef = Instantiate(impactParticles, rayHit.point, Quaternion.identity);
+                    Destroy(particleRef, 0.5f);
+
+                    if (rayHit.transform.gameObject.tag == "Enemy")
+                    {
+                        //This is where the enemy takes damage
+                        rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                    }
                 }
             }
         }
+
+        
     }
 
 }

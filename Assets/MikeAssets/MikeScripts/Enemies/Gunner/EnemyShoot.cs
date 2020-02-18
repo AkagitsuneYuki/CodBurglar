@@ -45,9 +45,10 @@ public class EnemyShoot : MonoBehaviour
 
     private void CheckIfCanHitPlayer()
     {
+        transform.LookAt(player.transform);
         if (Vector3.Distance(transform.position, player.transform.position) <= rayLength)
         {
-            transform.LookAt(player.transform);
+            
             if(ammo > 0)
             {
                 if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
@@ -55,25 +56,30 @@ public class EnemyShoot : MonoBehaviour
                     if (rayHit.transform.gameObject.tag == "Player")
                     {
                         canHitPlayer = true;
+                        //Debug.Log(gameObject.name + "can hit the player");
                     }
                     else
                     {
                         canHitPlayer = false;
+                        //Debug.Log(gameObject.name + "can't hit the player because " + rayHit.transform.gameObject.name + " is in the way");
                     }
                 }
                 else
                 {
                     canHitPlayer = false;
+                    //Debug.Log(gameObject.name + "can't hit the player because the raycast hit nothing");
                 }
             }
             else
             {
                 canHitPlayer = false;
+                //Debug.Log(gameObject.name + "can't hit the player because they have no ammo");
             }
         }
         else
         {
             canHitPlayer = false;
+            //Debug.Log(gameObject.name + "can't hit the player because they're " + Vector3.Distance(transform.position, player.transform.position) + " units away");
         }
         transform.rotation = transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
     }
@@ -83,7 +89,7 @@ public class EnemyShoot : MonoBehaviour
         sprite.GetComponent<SpriteRenderer>().sprite = shootSprite;
         ammo--;
         GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().pitch = Random.Range(1, 3);
+        GetComponent<AudioSource>().pitch = Random.Range(0.5f, 3);
         GetComponent<AudioSource>().PlayOneShot(shootSound);
 
         if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
@@ -93,7 +99,7 @@ public class EnemyShoot : MonoBehaviour
                 int i = Mathf.FloorToInt(Random.Range(1f, 101f));
                 if(i % 3 != 0)
                 {
-                    rayHit.transform.gameObject.GetComponent<PlayerData>().DecreaseHP(damage + (1 % 5));
+                    rayHit.transform.gameObject.GetComponent<PlayerData>().DecreaseHP(damage + (i % 5));
                 }
             }
         }

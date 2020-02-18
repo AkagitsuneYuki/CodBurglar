@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
         if(target != null)
         {
-            Debug.DrawLine(transform.position, target.transform.position, Color.red);
+            //Debug.DrawLine(transform.position, target.transform.position, Color.red);
         }
 
     }
@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void FollowPlayer()
+    private void FollowPlayer()
     {
         if(target != null)
         {
@@ -76,6 +76,9 @@ public class Enemy : MonoBehaviour
             {
                 if (rayHit.transform.gameObject.tag == "Player")
                 {
+
+                    Debug.Log(gameObject.name + " is following " + target.name);
+
                     Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
                     Vector2 playerPos = new Vector2(target.transform.position.x, target.transform.position.z);
 
