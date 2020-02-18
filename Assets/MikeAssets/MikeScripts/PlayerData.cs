@@ -7,7 +7,7 @@ public class PlayerData : MonoBehaviour
 {
     [SerializeField] private int hp = 50;
     [SerializeField] private int maxHP = 50;
-
+    [SerializeField] private PlayerDamageEffect dmg;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,14 @@ public class PlayerData : MonoBehaviour
 
     public void DecreaseHP(int damage)
     {
+
+        dmg.OnHit(damage * 32); //this changes how intense and how long the damage effect stays on screen
+
         //hp -= damage;     //comment this out when debugging
         if(hp < 0)
         {
             hp = 0;
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
         }
     }
 

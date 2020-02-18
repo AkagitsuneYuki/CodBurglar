@@ -32,6 +32,25 @@ public class MeleeCat : MonoBehaviour
         FollowPlayer();
     }
 
+    private void OnAttack()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out rayHit, 1f, layerMask))
+        {
+            if (rayHit.transform.gameObject.tag == "Player")
+            {
+                Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
+                Vector2 playerPos = new Vector2(target.transform.position.x, target.transform.position.z);
+                float dis = Vector2.Distance(curPos, playerPos);
+                //print("The player is " + dis + " units away from the attack");
+
+                int dmgToPlayer = Mathf.FloorToInt((5f * dis)) + Random.Range(-2, 2);
+
+                rayHit.transform.gameObject.GetComponent<PlayerData>().DecreaseHP(dmgToPlayer);
+
+
+            }
+        }
+    }
 
     private void FollowPlayer()
     {
@@ -97,7 +116,7 @@ public class MeleeCat : MonoBehaviour
     //the coroutine for when this guy is attacking the player
     IEnumerator Attack()
     {
-
+        OnAttack();
         // add the attacking part here
 
         yield return new WaitForSeconds(1);
