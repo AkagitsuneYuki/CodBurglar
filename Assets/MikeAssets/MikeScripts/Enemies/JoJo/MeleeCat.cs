@@ -133,7 +133,7 @@ public class MeleeCat : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         attacking = false;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(3f);
         inAttack = false;
     }
 
