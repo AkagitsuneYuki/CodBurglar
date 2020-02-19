@@ -20,7 +20,7 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Input.GetAxis("Mouse ScrollWheel"));
+        //print(Input.GetAxis("Mouse ScrollWheel"));
 
         if(Input.GetAxis("Mouse ScrollWheel") != 0)
         {

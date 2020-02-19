@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
                 if (rayHit.transform.gameObject.tag == "Player")
                 {
 
-                    Debug.Log(gameObject.name + " is following " + target.name);
+                    //Debug.Log(gameObject.name + " is following " + target.name);
 
                     Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
                     Vector2 playerPos = new Vector2(target.transform.position.x, target.transform.position.z);

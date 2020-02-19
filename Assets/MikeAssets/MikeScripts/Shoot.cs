@@ -37,7 +37,21 @@ public class Shoot : MonoBehaviour
                     if (rayHit.transform.gameObject.tag == "Enemy")
                     {
                         //This is where the enemy takes damage
-                        rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+
+                        Enemy enemy = rayHit.transform.gameObject.GetComponent<Enemy>();
+
+                        if(enemy == null)
+                        {
+                            //melee cat
+                            rayHit.transform.gameObject.GetComponent<MeleeCat>().TakeDamage(damage);
+                        }
+                        else
+                        {
+                            //gunner
+                            rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                        }
+
+                        
                     }
                 }
             }

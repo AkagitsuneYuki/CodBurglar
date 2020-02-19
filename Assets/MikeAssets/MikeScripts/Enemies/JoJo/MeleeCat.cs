@@ -32,6 +32,18 @@ public class MeleeCat : MonoBehaviour
         FollowPlayer();
     }
 
+    public void TakeDamage(int dmg)
+    {
+        // CALL FLASH COROUTINE
+        //StartCoroutine(Flash());
+
+        health -= dmg;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnAttack()
     {
         if (Physics.Raycast(transform.position, transform.forward, out rayHit, 1f, layerMask))
