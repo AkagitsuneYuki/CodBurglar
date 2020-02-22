@@ -15,49 +15,62 @@ public class Shoot : MonoBehaviour
     [SerializeField] private AudioClip shootSound;
 
     [SerializeField] private GameObject gun;
+    Vector3 forwardPos;
+    [SerializeField] private bool canShoot = true;
 
- 
     private void Update()
     {
         if (gun != null && gun.activeSelf)
         {
-            Vector3 forwardPos = (transform.forward * rayLength) + (transform.right * Random.Range(-0.5f, 0.5f)) + (transform.up * Random.Range(-0.5f, 0.5f));
+            forwardPos = (transform.forward * rayLength) + (transform.right * Random.Range(-0.5f, 0.5f)) + (transform.up * Random.Range(-0.5f, 0.5f));
 
             Debug.DrawRay(transform.position, forwardPos);
 
             if (Input.GetButtonDown("Fire1"))
             {
-                GetComponent<AudioSource>().PlayOneShot(shootSound);
-
-                if (Physics.Raycast(transform.position, forwardPos, out rayHit, rayLength, layerMask))
+                if (canShoot)
                 {
-                    particleRef = Instantiate(impactParticles, rayHit.point, Quaternion.identity);
-                    Destroy(particleRef, 0.5f);
-
-                    if (rayHit.transform.gameObject.tag == "Enemy")
-                    {
-                        //This is where the enemy takes damage
-
-                        Enemy enemy = rayHit.transform.gameObject.GetComponent<Enemy>();
-
-                        if(enemy == null)
-                        {
-                            //melee cat
-                            rayHit.transform.gameObject.GetComponent<MeleeCat>().TakeDamage(damage);
-                        }
-                        else
-                        {
-                            //gunner
-                            rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-                        }
-
-                        
-                    }
+                    StartCoroutine(wait());
+                    canShoot = false;
                 }
             }
         }
-
         
     }
+
+    IEnumerator wait()
+    {
+        
+        GetComponent<AudioSource>().PlayOneShot(shootSound);
+
+        if (Physics.Raycast(transform.position, forwardPos, out rayHit, rayLength, layerMask))
+        {
+            particleRef = Instantiate(impactParticles, rayHit.point, Quaternion.identity);
+            Destroy(particleRef, 0.5f);
+
+            if (rayHit.transform.gameObject.tag == "Enemy")
+            {
+                //This is where the enemy takes damage
+
+                Enemy enemy = rayHit.transform.gameObject.GetComponent<Enemy>();
+
+                if (enemy == null)
+                {
+                    //melee cat
+                    rayHit.transform.gameObject.GetComponent<MeleeCat>().TakeDamage(damage);
+                }
+                else
+                {
+                    //gunner
+                    rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                }
+            }
+        }
+        yield return new WaitForSeconds(0.25f);
+        canShoot = true;
+    }
+
+
+
 
 }

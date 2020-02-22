@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //I'm gonna have to ask someone how to do this in a way that's better for the player, should probably ask TJ?
     private void FollowPlayer()
     {
         if(target != null)
