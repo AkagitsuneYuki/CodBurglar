@@ -115,6 +115,15 @@ public class MeleeCat : MonoBehaviour
         } 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name == "Sword")
+        {
+            TakeDamage(3);
+        }
+    }
+
+
     public bool IsAttacking()
     {
         return attacking;

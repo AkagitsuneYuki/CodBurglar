@@ -5,8 +5,10 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
 
-    [SerializeField] private Animator anime;
+    [SerializeField] private Animation anime;
     [SerializeField] private CapsuleCollider hitbox;
+
+    private bool swing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,23 +19,19 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (!anime.isPlaying)
         {
-            if (anime.GetBool("Swing") == false)
+            swing = false;
+            if (Input.GetButtonDown("Fire1"))
             {
-                anime.SetBool("Swing", true);
+                swing = true;
+                anime.Play();
             }
         }
+        hitbox.enabled = swing;
+
     }
 
-    private void SwingEnd()
-    {
-        StartCoroutine(Swing());
-    }
 
-    IEnumerator Swing()
-    {
-        yield return new WaitForSeconds(0.1f);
-        anime.SetBool("Swing", false);
-    }
 }
+

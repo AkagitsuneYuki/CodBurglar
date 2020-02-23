@@ -117,4 +117,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Sword")
+        {
+            TakeDamage(3);
+        }
+    }
+
 }
