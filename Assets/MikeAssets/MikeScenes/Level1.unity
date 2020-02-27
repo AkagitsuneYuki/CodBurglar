@@ -252,12 +252,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -2077,12 +2077,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -3146,12 +3146,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -4499,12 +4499,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -5382,12 +5382,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -6488,12 +6488,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -6982,7 +6982,7 @@ GameObject:
   - component: {fileID: 1065558370}
   - component: {fileID: 1065558369}
   - component: {fileID: 1065558368}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TutorialTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8987,7 +8987,7 @@ MonoBehaviour:
   rayLength: 60
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 51
   impactParticles: {fileID: 7448973247351096953, guid: 7ec392aa38c1f1746a43e34cbac1437e,
     type: 3}
   shootSound: {fileID: 8300000, guid: e9c7b618f7653f047b0729335acd467f, type: 3}
@@ -9480,12 +9480,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -10429,12 +10429,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -12186,7 +12186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 5
+  m_WalkSpeed: 6
   m_RunSpeed: 10
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
@@ -13428,12 +13428,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -13715,12 +13715,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -14395,12 +14395,12 @@ PrefabInstance:
     - target: {fileID: 2239165831162647848, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647849, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: rayLength
-      value: 609
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
