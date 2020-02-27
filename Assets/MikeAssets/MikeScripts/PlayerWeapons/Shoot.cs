@@ -18,9 +18,11 @@ public class Shoot : MonoBehaviour
     Vector3 forwardPos;
     [SerializeField] private bool canShoot = true;
 
+    [SerializeField] private WeaponData gunData;
+
     private void Update()
     {
-        if (gun != null && gun.activeSelf)
+        if (gun != null && gun.activeSelf && gunData.GetLoadedAmmo() > 0)
         {
             forwardPos = (transform.forward * rayLength) + (transform.right * Random.Range(-0.5f, 0.5f)) + (transform.up * Random.Range(-0.5f, 0.5f));
 
@@ -40,7 +42,8 @@ public class Shoot : MonoBehaviour
 
     IEnumerator wait()
     {
-        
+        gunData.DecreaseAmmo();
+
         GetComponent<AudioSource>().PlayOneShot(shootSound);
 
         if (Physics.Raycast(transform.position, forwardPos, out rayHit, rayLength, layerMask))
@@ -67,6 +70,11 @@ public class Shoot : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0.25f);
+        if(gunData.GetLoadedAmmo() == 0)
+        {
+            yield return new WaitForSeconds(2);
+            gunData.Reload();
+        }
         canShoot = true;
     }
 

@@ -1479,7 +1479,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159525708}
-  m_Layer: 0
+  - component: {fileID: 159525709}
+  m_Layer: 8
   m_Name: EmptyHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,6 +1501,23 @@ Transform:
   m_Father: {fileID: 702018855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159525709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159525707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a73a4fd2cbdcb419b223ab9bf4d2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 1
+  maxAmmo: 1
+  loadedAmmo: 1
+  maxLoadedAmmo: 1
+  infiniteAmmo: 1
 --- !u!4 &165084187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2234708126279590571, guid: f593bd7cce71f17479a4025617ccdf69,
@@ -4241,7 +4259,8 @@ GameObject:
   - component: {fileID: 611084861}
   - component: {fileID: 611084865}
   - component: {fileID: 611084863}
-  m_Layer: 0
+  - component: {fileID: 611084864}
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4340,6 +4359,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anime: {fileID: 611084865}
   hitbox: {fileID: 611084861}
+--- !u!114 &611084864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611084859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a73a4fd2cbdcb419b223ab9bf4d2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 0
+  maxAmmo: 1
+  loadedAmmo: 0
+  maxLoadedAmmo: 1
+  infiniteAmmo: 0
 --- !u!111 &611084865
 Animation:
   m_ObjectHideFlags: 0
@@ -4900,7 +4936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702018855}
   - component: {fileID: 702018856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8800,7 +8836,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1368843127}
   - component: {fileID: 1368843128}
-  m_Layer: 0
+  - component: {fileID: 1368843129}
+  m_Layer: 8
   m_Name: pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8871,6 +8908,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1368843129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368843126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a73a4fd2cbdcb419b223ab9bf4d2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 6
+  maxAmmo: 6
+  loadedAmmo: 6
+  maxLoadedAmmo: 6
+  infiniteAmmo: 1
 --- !u!1001 &1374437846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8993,6 +9047,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: e9c7b618f7653f047b0729335acd467f, type: 3}
   gun: {fileID: 1368843126}
   canShoot: 1
+  gunData: {fileID: 1368843129}
 --- !u!82 &1379993720
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9836,7 +9891,8 @@ GameObject:
   - component: {fileID: 1575659205}
   - component: {fileID: 1575659207}
   - component: {fileID: 1575659206}
-  m_Layer: 0
+  - component: {fileID: 1575659208}
+  m_Layer: 8
   m_Name: grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9920,6 +9976,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1575659208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575659204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a73a4fd2cbdcb419b223ab9bf4d2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 0
+  maxAmmo: 5
+  loadedAmmo: 0
+  maxLoadedAmmo: 5
+  infiniteAmmo: 0
 --- !u!4 &1582683236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4306887755116412, guid: 255cfeb424325e2418e0960d08f6a3a7,
@@ -11982,7 +12055,7 @@ GameObject:
   - component: {fileID: 1904119209}
   - component: {fileID: 1901197097}
   - component: {fileID: 1186316022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -12003,7 +12076,7 @@ GameObject:
   - component: {fileID: 1905442447}
   - component: {fileID: 1379993720}
   - component: {fileID: 1379993719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

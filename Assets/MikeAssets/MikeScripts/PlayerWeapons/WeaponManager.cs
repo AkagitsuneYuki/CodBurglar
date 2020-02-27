@@ -8,7 +8,6 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private GameObject[] weapons;
     [SerializeField] private int weaponEquipped = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         if(weapons.Length == 0)
@@ -17,21 +16,18 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //print(Input.GetAxis("Mouse ScrollWheel"));
-
         if(Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             ChangeWeapon((int)(Input.GetAxis("Mouse ScrollWheel") * 10));
         }
-
     }
 
     private void ChangeWeapon(int i)
     {
         weaponEquipped += i;
+
         if (weaponEquipped >= weapons.Length)
         {
             weaponEquipped = 0;
@@ -53,6 +49,12 @@ public class WeaponManager : MonoBehaviour
             }
         }
         
+        if(weapons[weaponEquipped].GetComponent<WeaponData>().GetTotalAmmo() == 0)
+        {
+            // this recursively calls the change weapon until we have one that has ammo
+            ChangeWeapon(1);
+        }
+
     }
 
     public GameObject GetWeapon()
