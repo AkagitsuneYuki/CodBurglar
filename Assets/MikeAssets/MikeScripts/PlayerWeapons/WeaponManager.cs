@@ -70,4 +70,10 @@ public class WeaponManager : MonoBehaviour
         else return null;
     }
 
+    public void ObtainWeapon(int weapon)
+    {
+        weapons[weapon].GetComponent<WeaponData>().PickupAmmo(1000);
+        weaponEquipped = weapon;
+        ChangeWeapon(0);
+    }
 }

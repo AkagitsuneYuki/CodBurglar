@@ -12,6 +12,8 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private bool pinkKey;
     [SerializeField] private bool yellowKey;
 
+    [SerializeField] private GameObject weaponManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -111,5 +113,10 @@ public class PlayerData : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if(other.name.Contains("SwordItem"))    //this is incase there are more than 1 sword item on the field
+        {
+            Destroy(other.gameObject);
+            weaponManager.GetComponent<WeaponManager>().ObtainWeapon(3);
+        }
     }
 }
