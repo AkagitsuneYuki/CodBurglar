@@ -18,6 +18,11 @@ public class WeaponData : MonoBehaviour
         return loadedAmmo;
     }
 
+    public int GetMaxLoadedAmmo()
+    {
+        return maxLoadedAmmo;
+    }
+
     public int GetTotalAmmo()
     {
         return ammo;

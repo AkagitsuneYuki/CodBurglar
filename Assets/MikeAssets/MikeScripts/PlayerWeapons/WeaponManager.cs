@@ -24,7 +24,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void ChangeWeapon(int i)
+    public void ChangeWeapon(int i)
     {
         weaponEquipped += i;
 
@@ -49,7 +49,7 @@ public class WeaponManager : MonoBehaviour
             }
         }
         
-        if(weapons[weaponEquipped].GetComponent<WeaponData>().GetTotalAmmo() == 0)
+        if(weapons[weaponEquipped].GetComponent<WeaponData>().GetTotalAmmo() <= 0 && weapons[weaponEquipped].GetComponent<WeaponData>().GetLoadedAmmo() <= 0)
         {
             // this recursively calls the change weapon until we have one that has ammo
             ChangeWeapon(1);

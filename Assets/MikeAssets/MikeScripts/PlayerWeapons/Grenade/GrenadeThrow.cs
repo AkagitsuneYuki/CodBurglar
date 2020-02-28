@@ -7,23 +7,32 @@ public class GrenadeThrow : MonoBehaviour
 
     [SerializeField] private GameObject grenade;
 
+    [SerializeField] private WeaponData data;
+
+    [SerializeField] private WeaponManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        data = GetComponent<WeaponData>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && data.GetLoadedAmmo() > 0)
         {
             ThrowGrenade();
+        }
+        if(data.GetLoadedAmmo() == 0)
+        {
+            manager.ChangeWeapon(1);
         }
     }
 
     private void ThrowGrenade()
     {
+        data.DecreaseAmmo();
 
         GameObject test = Instantiate(grenade,
             GameObject.FindGameObjectWithTag("Player").transform.position + 
