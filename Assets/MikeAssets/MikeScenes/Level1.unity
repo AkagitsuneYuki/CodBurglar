@@ -8096,6 +8096,7 @@ MonoBehaviour:
   pinkKey: 0
   yellowKey: 0
   weaponManager: {fileID: 702018854}
+  theSword: {fileID: 611084863}
 --- !u!4 &1196704779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585,
@@ -13015,7 +13016,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908593298}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 4.23}
+  m_LocalPosition: {x: 0, y: 0, z: 4.31}
   m_LocalScale: {x: 0.25689, y: 0.25689, z: 0.25689}
   m_Children: []
   m_Father: {fileID: 1054141728}
@@ -13023,8 +13024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.78, y: 2.56}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -14.78, y: 2.66}
+  m_SizeDelta: {x: 50, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908593300
 MonoBehaviour:
@@ -13044,7 +13045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: da valt
+  m_text: end of level i guess
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 646bf6bf2e2d28642a8b482038a4285a, type: 2}
   m_sharedMaterial: {fileID: -6908032065057984996, guid: 646bf6bf2e2d28642a8b482038a4285a,
@@ -13114,10 +13115,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1908593300}
-    characterCount: 7
+    characterCount: 20
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -14846,12 +14847,12 @@ PrefabInstance:
     - target: {fileID: 3122902278890765834, guid: 0f5b464f7a0f0ee4c9278ecb91def86c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3122902278890765835, guid: 0f5b464f7a0f0ee4c9278ecb91def86c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.61
       objectReference: {fileID: 0}
     - target: {fileID: 3122902278890765835, guid: 0f5b464f7a0f0ee4c9278ecb91def86c,
         type: 3}
@@ -14861,7 +14862,7 @@ PrefabInstance:
     - target: {fileID: 3122902278890765835, guid: 0f5b464f7a0f0ee4c9278ecb91def86c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.33
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3122902278890765835, guid: 0f5b464f7a0f0ee4c9278ecb91def86c,
         type: 3}

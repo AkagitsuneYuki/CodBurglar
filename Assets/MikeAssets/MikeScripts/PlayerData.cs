@@ -14,17 +14,7 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] private GameObject weaponManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private Sword theSword;
 
     public bool HasPinkKey()
     {
@@ -33,6 +23,21 @@ public class PlayerData : MonoBehaviour
 
     public void DecreaseHP(int damage)
     {
+        if (theSword.IsBlocking())      //this decreases the amount of damage when the player is blocking with the sword
+        {
+            if(Mathf.RoundToInt(Random.Range(1, 100)) % 2 == 1)
+            {
+                damage = 0;
+            }
+            else
+            {
+                if(damage > 1)
+                {
+                    damage = 1;
+                }
+            }
+        }
+
 
         dmg.OnHit(damage * 32); //this changes how intense and how long the damage effect stays on screen
 

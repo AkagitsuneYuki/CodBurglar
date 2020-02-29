@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -491,8 +491,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352881494}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 63.88, y: 48.54, z: 65.24}
-  m_LocalScale: {x: 2.6, y: 1, z: 0.8}
+  m_LocalPosition: {x: 63.88, y: 48.54, z: 64.42}
+  m_LocalScale: {x: 2.86234, y: 1, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -601,7 +601,7 @@ PrefabInstance:
     - target: {fileID: -8952172701560571689, guid: d64de5400ef0d9544a23d691dde1a7e1,
         type: 3}
       propertyPath: m_CastShadows
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8952172701560571689, guid: d64de5400ef0d9544a23d691dde1a7e1,
         type: 3}
@@ -726,7 +726,7 @@ PrefabInstance:
     - target: {fileID: 562411852869349725, guid: d64de5400ef0d9544a23d691dde1a7e1,
         type: 3}
       propertyPath: m_CastShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 562411852869349725, guid: d64de5400ef0d9544a23d691dde1a7e1,
         type: 3}
@@ -1502,7 +1502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1680494587
 AudioListener:
   m_ObjectHideFlags: 0
