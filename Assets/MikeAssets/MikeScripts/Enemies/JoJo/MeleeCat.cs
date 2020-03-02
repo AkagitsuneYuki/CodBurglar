@@ -74,6 +74,7 @@ public class MeleeCat : MonoBehaviour
                 transform.rotation = transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
                 if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
                 {
+                    Debug.DrawRay(transform.position, transform.forward, Color.red);
                     if (rayHit.transform.gameObject.tag == "Player")
                     {
                         Vector2 curPos = new Vector2(transform.position.x, transform.position.z);

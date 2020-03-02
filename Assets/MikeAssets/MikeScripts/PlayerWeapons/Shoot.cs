@@ -53,19 +53,22 @@ public class Shoot : MonoBehaviour
 
             if (rayHit.transform.gameObject.tag == "Enemy")
             {
-                //This is where the enemy takes damage
+                //This is where the enemy takes damage, I think this is better for detecting enemy types?
 
-                Enemy enemy = rayHit.transform.gameObject.GetComponent<Enemy>();
-
-                if (enemy == null)
+                //gunner
+                if(rayHit.transform.gameObject.TryGetComponent(out Enemy enemy))
                 {
-                    //melee cat
+                    rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                }
+                //jojo
+                else if (rayHit.transform.gameObject.TryGetComponent(out MeleeCat jojo))
+                {
                     rayHit.transform.gameObject.GetComponent<MeleeCat>().TakeDamage(damage);
                 }
-                else
+                //yakuza
+                else if (rayHit.transform.gameObject.TryGetComponent(out YakuzaCat yakuza))
                 {
-                    //gunner
-                    rayHit.transform.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                    rayHit.transform.gameObject.GetComponent<YakuzaCat>().TakeDamage(damage);
                 }
             }
         }
