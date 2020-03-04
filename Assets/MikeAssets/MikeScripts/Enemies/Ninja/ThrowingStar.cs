@@ -39,7 +39,7 @@ public class ThrowingStar : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject == player){
-            player.GetComponent<PlayerData>().DecreaseHP(Mathf.FloorToInt(Random.Range(1, 6)));
+            player.GetComponent<PlayerData>().DecreaseHP(Mathf.FloorToInt(Random.Range(2, 6)));
         }
         Destroy(gameObject);
     }
