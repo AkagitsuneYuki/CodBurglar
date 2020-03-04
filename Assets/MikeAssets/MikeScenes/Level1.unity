@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 3086843172504762238, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f593bd7cce71f17479a4025617ccdf69, type: 3}
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.08
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: c6339026562597e489580eb9f4fc1a89, type: 2}
 --- !u!4 &323988862 stripped
@@ -4751,7 +4751,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 06bb7be22b681cf42b11bb826b97a577, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.74
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13288,6 +13288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234171801147162764, guid: cb0a01313d5bae64da130803fa7a0637,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0a01313d5bae64da130803fa7a0637, type: 3}
