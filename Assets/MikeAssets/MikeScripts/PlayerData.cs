@@ -45,7 +45,7 @@ public class PlayerData : MonoBehaviour
         if(hp < 0)
         {
             hp = 0;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -76,7 +76,7 @@ public class PlayerData : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if(other.name == "The Pink Key")
+        if(other.name == "The Pink Key")    //the first keys for levels 1 and 2
         {
             Destroy(other.gameObject);
             pinkKey = true;
@@ -86,7 +86,7 @@ public class PlayerData : MonoBehaviour
         {
             Destroy(other.gameObject);
             yellowKey = true;
-        }
+        }//the second keys for levels 1 and 2
 
         if (other.name == "The Pink Door")
         {
@@ -99,9 +99,21 @@ public class PlayerData : MonoBehaviour
 
         if (other.name == "The Yellow Door")
         {
+            
             if (yellowKey)
             {
-                Destroy(other.gameObject);
+                if (SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                    SceneManager.LoadScene(2);
+                }
+                else if (SceneManager.GetActiveScene().buildIndex == 2)
+                {
+                    SceneManager.LoadScene(3);
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
             }
 
         }

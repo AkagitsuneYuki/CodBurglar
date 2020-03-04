@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MikeAssets/MikeScenes/Level1.unity
     guid: 95511a8cf4a12ff4ea6d8263ad346111
+  - enabled: 1
+    path: Assets/MikeAssets/MikeScenes/Level2.unity
+    guid: 031afb7fcba8637429b7bbb554954647
+  - enabled: 1
+    path: Assets/MikeAssets/MikeScenes/TBC.unity
+    guid: 62d71d2dfaa261940b33b774fd7d8b62
   m_configObjects: {}

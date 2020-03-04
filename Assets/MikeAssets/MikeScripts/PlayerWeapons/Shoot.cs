@@ -70,6 +70,10 @@ public class Shoot : MonoBehaviour
                 {
                     rayHit.transform.gameObject.GetComponent<YakuzaCat>().TakeDamage(damage);
                 }
+                else if (rayHit.transform.gameObject.TryGetComponent(out Ninja ninjaCat))
+                {
+                    rayHit.transform.gameObject.GetComponent<Ninja>().TakeDamage(damage);
+                }
             }
         }
         yield return new WaitForSeconds(0.25f);
