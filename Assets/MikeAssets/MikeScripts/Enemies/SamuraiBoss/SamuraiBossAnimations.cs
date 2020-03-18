@@ -29,6 +29,7 @@ public class SamuraiBossAnimations : MonoBehaviour
         IncreaseIdleTimer();
     }
 
+    #region idle
 
     private void IncreaseIdleTimer()
     {
@@ -49,6 +50,10 @@ public class SamuraiBossAnimations : MonoBehaviour
         SetIdleCondition(true);
     }
 
+    #endregion
+
+    #region Attacks
+
     private void ExitChargeAtk()
     {
         anime.SetBool("ChargeAtk", false);
@@ -68,6 +73,44 @@ public class SamuraiBossAnimations : MonoBehaviour
             spinCounter++;
         }
     }
+
+    private void ExitNormalAtk()
+    {
+        anime.SetBool("NormalAtk", false);
+        ResetIdleTimer();
+    }
+
+    #endregion
+
+    #region Walking
+    // this can only work if the walking parameter is the last one
+    private void BeginWalk()
+    {
+        // for every parameter
+        for(int i = 0; i < anime.parameterCount; i++)
+        {
+            // if the parameter is a bool
+            if (anime.parameters[i].GetType() == typeof(bool))
+            {
+                // if the parameter isn't walking
+                if (anime.parameters[i].name != "Walking")
+                {
+                    // if the parameter is true then break
+                    if (anime.GetBool(anime.parameters[i].name))
+                    {
+                        break;
+                    }
+                }
+                // if the parameter is walking
+                else
+                {
+                    anime.SetBool("Walking", true);
+                }
+            }
+        }
+    }
+
+    #endregion
 
     IEnumerator BossAI()
     {
