@@ -71,7 +71,7 @@ public class MeleeCat : MonoBehaviour
             if (!inAttack)
             {
                 transform.LookAt(target.transform);
-                transform.rotation = transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+                transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
                 if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
                 {
                     Debug.DrawRay(transform.position, transform.forward, Color.red);

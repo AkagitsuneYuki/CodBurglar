@@ -29,6 +29,11 @@ public class SamuraiBossAnimations : MonoBehaviour
         IncreaseIdleTimer();
     }
 
+    public void SetPlayerFighting(bool tf)
+    {
+        isPlayerFighting = tf;
+    }
+
     #region idle
 
     private void IncreaseIdleTimer()
