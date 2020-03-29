@@ -16,6 +16,8 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] private Sword theSword;
 
+    [SerializeField] private SamuraiBossAI samBoss;
+
     public bool HasPinkKey()
     {
         return pinkKey;
@@ -82,7 +84,7 @@ public class PlayerData : MonoBehaviour
             pinkKey = true;
         }
 
-        if (other.name == "The Yellow Key")
+        if (other.name.Contains("The Yellow Key"))
         {
             Destroy(other.gameObject);
             yellowKey = true;
@@ -108,7 +110,9 @@ public class PlayerData : MonoBehaviour
                 }
                 else if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
-                    SceneManager.LoadScene(3);
+                    //SceneManager.LoadScene(3);
+                    Destroy(other.gameObject);
+                    samBoss.InitFight();
                 }
                 else
                 {

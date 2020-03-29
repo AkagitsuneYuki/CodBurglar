@@ -21,7 +21,6 @@ public class SamuraiBossAnimations : MonoBehaviour
 
         isPlayerFighting = true;    //delete this line when finished debugging
 
-        StartCoroutine(BossAI());
     }
 
     void Update()
@@ -79,32 +78,54 @@ public class SamuraiBossAnimations : MonoBehaviour
         }
     }
 
+    public void BeginNormalAtk()
+    {
+        for (int i = 0; i < anime.parameterCount; i++)
+        {
+            if (anime.parameters[i].type == AnimatorControllerParameterType.Bool)
+            {
+                if (anime.parameters[i].name != "NormalAtk")
+                {
+                    anime.SetBool(anime.parameters[i].name, false);
+                }
+                else
+                {
+                    anime.SetBool("NormalAtk", true);
+                }
+            }
+        }
+    }
+
     private void ExitNormalAtk()
     {
         anime.SetBool("NormalAtk", false);
         ResetIdleTimer();
     }
 
+    public bool GetNormalAtk()
+    {
+        return anime.GetBool("NormalAtk");
+    }
+
     #endregion
 
     #region Walking
     // this can only work if the walking parameter is the last one
-    private void BeginWalk()
+    public void BeginWalk()
     {
+        SetIdleCondition(false);
         // for every parameter
         for(int i = 0; i < anime.parameterCount; i++)
         {
+            Debug.Log(anime.parameters[i].type);
             // if the parameter is a bool
-            if (anime.parameters[i].GetType() == typeof(bool))
+            if (anime.parameters[i].type == AnimatorControllerParameterType.Bool)
             {
+                
                 // if the parameter isn't walking
                 if (anime.parameters[i].name != "Walking")
                 {
-                    // if the parameter is true then break
-                    if (anime.GetBool(anime.parameters[i].name))
-                    {
-                        break;
-                    }
+                    anime.SetBool(anime.parameters[i].name, false);
                 }
                 // if the parameter is walking
                 else
@@ -115,16 +136,11 @@ public class SamuraiBossAnimations : MonoBehaviour
         }
     }
 
+    public bool GetWalking()
+    {
+        return anime.GetBool("Walking");
+    }
+
     #endregion
 
-    IEnumerator BossAI()
-    {
-        while (true)
-        {
-            
-            //SetIdleCondition(false);
-            //anime.SetBool("ChargeAtk", true);
-            yield return new WaitForSeconds(20);
-        }
-    }
 }
