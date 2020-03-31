@@ -21,6 +21,8 @@ public class SamuraiBossAI : MonoBehaviour
     [SerializeField] private int rayLength;
     [SerializeField] private LayerMask layerMask;
 
+    private float disBetweenMeAndPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,10 @@ public class SamuraiBossAI : MonoBehaviour
     void Update()
     {
         FaceThePlayer();
+
+        Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
+        Vector3 myPos = new Vector3(transform.position.x, 0, transform.position.z);
+        disBetweenMeAndPlayer = Vector3.Distance(playerPos, myPos);
     }
 
     private void FaceThePlayer()
@@ -50,58 +56,60 @@ public class SamuraiBossAI : MonoBehaviour
 
     IEnumerator BossAI()
     {
+
+        float ChangeStateTimer = 0f;
+
         while (true)
         {
-            if (fightState == fightStates[0])       //idle
+            //this should be more efficient i think
+            switch (fightState)
             {
-                WalkToANewSpot();
-                fightState = fightStates[Mathf.FloorToInt(Random.Range(0, 2))];
-            }
-            else if (fightState == fightStates[1])  //normal
-            {
-                //if i'm not walking
-                if (!anime.GetWalking() && anime.GetNormalAtk() == false)
-                {
-                    if(anime.GetNormalAtk() == false)
+                case "idle":
+                    ChangeStateTimer += Time.deltaTime;
+                    WalkToANewSpot();
+                    //fightState = fightStates[Mathf.FloorToInt(Random.Range(0, 2))];
+                    if (ChangeStateTimer >= Random.Range(10f, 15f))
                     {
-
+                        fightState = fightStates[Mathf.FloorToInt(Random.Range(0, 4))];
                     }
-                    //begin walk
-                    anime.BeginWalk();
-                    //target the player
-                    navMesh.SetDestination(player.transform.position);
-                }
-                //if i'm walking
-                else
-                {
-                    //do the normal attack when close to the player
-                    if (anime.GetNormalAtk() == false)
+                    break;
+                case "normal attack":
+                    //if i'm not walking
+                    if (!anime.GetWalking() && !anime.GetNormalAtk())
                     {
+                        //begin walk
+                        anime.BeginWalk();
+                        //target the player
                         navMesh.SetDestination(player.transform.position);
                     }
-                    Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-                    Vector3 myPos = new Vector3(transform.position.x, 0, transform.position.z);
-                    float disBetweenMeAndPlayer = Vector3.Distance(playerPos, myPos);
-                    if (disBetweenMeAndPlayer <= 5f && anime.GetNormalAtk() == false)
+                    //if i'm walking
+                    else
                     {
-                        DoNormalAtk();
+                        //do the normal attack when close to the player
+                        if (anime.GetNormalAtk() == false)
+                        {
+                            navMesh.SetDestination(player.transform.position);
+                        }
+                        if (disBetweenMeAndPlayer <= 5f && anime.GetNormalAtk() == false)
+                        {
+                            DoNormalAtk();
+                        }
                     }
-                }
+                    break;
+                // Spin attack
+                case "spin attack":
+                    // set the target to the player and the anime to the spin attack
+                    break;
+                // else if doing the charge attack
+                case "charged attack":
+                    //  do the charge attack function
+                    break;
+                default:
+                    Debug.Log("I think Mike fucked up?");
+                    break;
             }
-            // set the target to the player and the anime to the spin attack
-            // else if doing the charge attack
-            //  do the charge attack function
-            // else
-            //  ???
-
             yield return new WaitForSeconds((1/60));
-
-            
         }
-
-
-
-
     }
 
     private void DoNormalAtk()
@@ -118,12 +126,7 @@ public class SamuraiBossAI : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward, Color.red);
             if (rayHit.transform.gameObject.tag == "Player")
             {
-                Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
-                Vector2 playerPos = new Vector2(player.transform.position.x, player.transform.position.z);
-
-                float dis = Vector2.Distance(curPos, playerPos);
-
-                if (dis <= rayLength)
+                if (disBetweenMeAndPlayer <= rayLength)
                 {
                     player.GetComponent<PlayerData>().DecreaseHP(5);
                 }
@@ -133,9 +136,6 @@ public class SamuraiBossAI : MonoBehaviour
 
     private void WalkToANewSpot()
     {
-        Vector3 playerPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-        Vector3 myPos = new Vector3(transform.position.x, 0, transform.position.z);
-        float disBetweenMeAndPlayer = Vector3.Distance(playerPos, myPos);
         //print("The distance is " + disBetweenMeAndPlayer + " units");
         if (disBetweenMeAndPlayer <= 5f)
         {

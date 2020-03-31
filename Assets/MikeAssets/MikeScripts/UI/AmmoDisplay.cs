@@ -29,26 +29,24 @@ public class AmmoDisplay : MonoBehaviour
     {
         GameObject curWeapon = weapons.GetComponent<WeaponManager>().GetWeapon();
         WeaponData curWeaponData = curWeapon.GetComponent<WeaponData>();
-
-        if(curWeapon.name == "EmptyHand")
+        //This is much more efficient than before
+        switch (curWeapon.name)
         {
-            text.SetText("");
-        }
-        else if(curWeapon.name == "pistol")
-        {
-            text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());
-        }
-        else if(curWeapon.name == "grenade")
-        {
-            text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());
-        }
-        else if(curWeapon.name == "Sword")
-        {
-            text.SetText("");
-        }
-        else
-        {
-            text.SetText("Mike fucked up somewhere");
+            default:
+                text.SetText("Mike fucked up somewhere");
+                break;
+            case "EmptyHand":
+                text.SetText("");
+                break;
+            case "Sword":
+                text.SetText("");
+                break;
+            case "pistol":
+                text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());
+                break;
+            case "grenade":
+                text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());
+                break;
         }
     }
 }

@@ -72,72 +72,63 @@ public class PlayerData : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "TutorialTrigger")
+        //This should be much more efficient now!
+        switch (other.name)
         {
-            GameObject.FindGameObjectWithTag("Tutorial Text").GetComponent<TutorialText>().SwitchText();
-            Destroy(other.gameObject);
-        }
-
-        if(other.name == "The Pink Key")    //the first keys for levels 1 and 2
-        {
-            Destroy(other.gameObject);
-            pinkKey = true;
-        }
-
-        if (other.name.Contains("The Yellow Key"))
-        {
-            Destroy(other.gameObject);
-            yellowKey = true;
-        }//the second keys for levels 1 and 2
-
-        if (other.name == "The Pink Door")
-        {
-            if (pinkKey)
-            {
+            default:
+                if (other.name.Contains("The Yellow Key"))
+                {
+                    Destroy(other.gameObject);
+                    yellowKey = true;
+                }//the second keys for levels 1 and 2
+                if (other.tag == "HP")
+                {
+                    IncreaseHP(10);
+                    Destroy(other.gameObject);
+                }
+                if (other.name.Contains("SwordItem"))    //this is incase there are more than 1 sword item on the field
+                {
+                    Destroy(other.gameObject);
+                    weaponManager.GetComponent<WeaponManager>().ObtainWeapon(3);
+                }
+                break;
+            case "TutorialTrigger":
+                GameObject.FindGameObjectWithTag("Tutorial Text").GetComponent<TutorialText>().SwitchText();
                 Destroy(other.gameObject);
-            }
-
-        }
-
-        if (other.name == "The Yellow Door")
-        {
-            
-            if (yellowKey)
-            {
-                if (SceneManager.GetActiveScene().buildIndex == 1)
-                {
-                    SceneManager.LoadScene(2);
-                }
-                else if (SceneManager.GetActiveScene().buildIndex == 2)
-                {
-                    //SceneManager.LoadScene(3);
-                    Destroy(other.gameObject);
-                    samBoss.InitFight();
-                }
-                else
+                break;
+            case "The Pink Key":
+                Destroy(other.gameObject);
+                pinkKey = true;
+                break;
+            case "The Pink Door":
+                if (pinkKey)
                 {
                     Destroy(other.gameObject);
                 }
-            }
-
-        }
-
-        if (other.name == "The Button")
-        {
-            other.GetComponent<Button>().DestroyWall();
-            Destroy(other.gameObject);
-        }
-
-        if(other.tag == "HP")
-        {
-            IncreaseHP(10);
-            Destroy(other.gameObject);
-        }
-
-        if(other.name.Contains("SwordItem"))    //this is incase there are more than 1 sword item on the field
-        {
-            Destroy(other.gameObject);
-            weaponManager.GetComponent<WeaponManager>().ObtainWeapon(3);
+                break;
+            case "The Yellow Door":
+                if (yellowKey)
+                {
+                    if (SceneManager.GetActiveScene().buildIndex == 1)
+                    {
+                        SceneManager.LoadScene(2);
+                    }
+                    else if (SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        //SceneManager.LoadScene(3);
+                        Destroy(other.gameObject);
+                        samBoss.InitFight();
+                    }
+                    else
+                    {
+                        Destroy(other.gameObject);
+                    }
+                }
+                break;
+            case "The Button":
+                other.GetComponent<Button>().DestroyWall();
+                Destroy(other.gameObject);
+                break;
         }
     }
 }
