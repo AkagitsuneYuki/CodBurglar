@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790882891341688700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.09, z: 0}
   m_LocalScale: {x: 0.17089, y: 0.17089, z: 0.17089}
   m_Children: []
   m_Father: {fileID: 7967540110588076836}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 799b43a65d1356c40a222dca65abad85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29039102be8150b41908750557b0f405, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
     m_Bits: 307
   player: {fileID: 0}
   sprite: {fileID: 1790882891341688700}
-  shootSprite: {fileID: 21300000, guid: 38f4d221e68ce3a499ed0fb6fcdc6688, type: 3}
+  shootSprite: {fileID: 21300000, guid: 872a09690c3ff71449e7a45cb963df92, type: 3}
   shootSound: {fileID: 0}
   ninjaStar: {fileID: 3053331188338118958, guid: 20cc25657d979934996272a2f1ccb214,
     type: 3}
