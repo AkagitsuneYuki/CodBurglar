@@ -53,7 +53,7 @@ public class Shoot : MonoBehaviour
 
             if (rayHit.transform.gameObject.tag == "Enemy")
             {
-                //This is where the enemy takes damage, I think this is better for detecting enemy types?
+                //This is where the enemy takes damage, I should try to switch to using switches instead
 
                 //gunner
                 if(rayHit.transform.gameObject.TryGetComponent(out Enemy enemy))
