@@ -22,6 +22,10 @@ public class WeaponManager : MonoBehaviour
         {
             ChangeWeapon((int)(Input.GetAxis("Mouse ScrollWheel") * 10));
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ChangeWeapon(1);
+        }
     }
 
     public void ChangeWeapon(int i)

@@ -42,7 +42,15 @@ public class AmmoDisplay : MonoBehaviour
                 text.SetText("");
                 break;
             case "pistol":
-                text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());
+
+                if (curWeaponData.GetReloading())
+                {
+                    text.SetText("Reloading...");
+                }
+                else
+                {
+                    text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());
+                }
                 break;
             case "grenade":
                 text.SetText(curWeaponData.GetLoadedAmmo() + "/" + curWeaponData.GetMaxLoadedAmmo());

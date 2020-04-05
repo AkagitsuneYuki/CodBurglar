@@ -22,7 +22,7 @@ public class TutorialText : MonoBehaviour
 
     public void SwitchText()
     {
-        text.text = "Use the scrollwheel to change weapons";
+        text.text = "Use the scrollwheel or Tab to change weapons";
         Destroy(text.gameObject, 3);
     }
 

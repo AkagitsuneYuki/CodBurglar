@@ -13,6 +13,8 @@ public class WeaponData : MonoBehaviour
 
     [SerializeField] private bool infiniteAmmo; //does the weapon have infinite ammo
 
+    [SerializeField] private bool reloading;
+
     public int GetLoadedAmmo()
     {
         return loadedAmmo;
@@ -36,6 +38,16 @@ public class WeaponData : MonoBehaviour
         }
     }
 
+    public void SetReloading(bool tf)
+    {
+        reloading = tf;
+    }
+
+    public bool GetReloading()
+    {
+        return reloading;
+    }
+
     public void Reload()
     {
         if (!infiniteAmmo)
@@ -54,6 +66,7 @@ public class WeaponData : MonoBehaviour
         {
             loadedAmmo = maxLoadedAmmo;
         }
+        SetReloading(false);
     }
 
     public void PickupAmmo(int addedAmmo)
