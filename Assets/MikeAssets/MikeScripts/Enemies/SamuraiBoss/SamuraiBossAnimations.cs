@@ -64,17 +64,35 @@ public class SamuraiBossAnimations : MonoBehaviour
         ResetIdleTimer();
     }
 
-    private void ExitSpinAtk()
+    public void ExitSpinAtk()
     {
-        if(spinCounter == maxSpins)     //set the maxspins variable to a relatively high amount, but not too high
-        {
+//        if(spinCounter == maxSpins)     //set the maxspins variable to a relatively high amount, but not too high
+//        {
             anime.SetBool("SpinAtk", false);
-            spinCounter = 0;
+//            spinCounter = 0;
             ResetIdleTimer();
-        }
-        else
+//        }
+//        else
+//        {
+//           spinCounter++;
+//        }
+    }
+
+    public void BeginSpinAttack()
+    {
+        for (int i = 0; i < anime.parameterCount; i++)
         {
-            spinCounter++;
+            if (anime.parameters[i].type == AnimatorControllerParameterType.Bool)
+            {
+                if (anime.parameters[i].name != "SpinAtk")
+                {
+                    anime.SetBool(anime.parameters[i].name, false);
+                }
+                else
+                {
+                    anime.SetBool("SpinAtk", true);
+                }
+            }
         }
     }
 
@@ -107,6 +125,11 @@ public class SamuraiBossAnimations : MonoBehaviour
         return anime.GetBool("NormalAtk");
     }
 
+    public bool GetSpinAtk()
+    {
+        return anime.GetBool("SpinAtk");
+    }
+
     #endregion
 
     #region Walking
@@ -117,7 +140,7 @@ public class SamuraiBossAnimations : MonoBehaviour
         // for every parameter
         for(int i = 0; i < anime.parameterCount; i++)
         {
-            Debug.Log(anime.parameters[i].type);
+            //Debug.Log(anime.parameters[i].type);
             // if the parameter is a bool
             if (anime.parameters[i].type == AnimatorControllerParameterType.Bool)
             {

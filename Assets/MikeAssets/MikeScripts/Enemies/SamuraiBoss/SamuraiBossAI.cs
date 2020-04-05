@@ -56,41 +56,56 @@ public class SamuraiBossAI : MonoBehaviour
 
     IEnumerator BossAI()
     {
+        WalkToANewSpot();
 
-        float ChangeStateTimer = 0f;
+        float ChangeStateTimer = 0f;    //this is to keep track of how long the boss has been in the current state
+        float positionTimer = 0f;
 
         while (true)
         {
+            ChangeStateTimer += Time.deltaTime;
+
             //this should be more efficient i think
             switch (fightState)
             {
                 case "idle":
-                    ChangeStateTimer += Time.deltaTime;
-                    WalkToANewSpot();
-                    //fightState = fightStates[Mathf.FloorToInt(Random.Range(0, 2))];
+                    positionTimer += Time.deltaTime;
+                    if(positionTimer > Random.Range(3f, 5f))
+                    {
+                        WalkToANewSpot();
+                        positionTimer = 0;
+                    }
                     if (ChangeStateTimer >= Random.Range(10f, 15f))
                     {
+                        positionTimer = 0;
                         fightState = fightStates[Mathf.FloorToInt(Random.Range(0, 4))];
+                        //fightState = fightStates[2];    //testing charged attack
+
+                        ChangeStateTimer = 0;
                     }
                     break;
                 case "normal attack":
-                    //if i'm not walking
-                    if (!anime.GetWalking() && !anime.GetNormalAtk())
+                    if (!anime.GetWalking() && !anime.GetNormalAtk())   //if i'm not walking
                     {
-                        //begin walk
-                        anime.BeginWalk();
-                        //target the player
-                        navMesh.SetDestination(player.transform.position);
+                        anime.BeginWalk();  //begin walk
+                        navMesh.SetDestination(player.transform.position);  //target the player
                     }
-                    //if i'm walking
-                    else
+
+                    else    //if i'm walking
                     {
                         //do the normal attack when close to the player
                         if (anime.GetNormalAtk() == false)
                         {
                             navMesh.SetDestination(player.transform.position);
                         }
-                        if (disBetweenMeAndPlayer <= 5f && anime.GetNormalAtk() == false)
+                        else
+                        {
+                            yield return new WaitForSeconds(0.5f);
+                            fightState = fightStates[0];
+                            WalkToANewSpot();
+                            break;
+                        }
+                        if (disBetweenMeAndPlayer <= rayLength && anime.GetNormalAtk() == false)
                         {
                             DoNormalAtk();
                         }
@@ -99,13 +114,41 @@ public class SamuraiBossAI : MonoBehaviour
                 // Spin attack
                 case "spin attack":
                     // set the target to the player and the anime to the spin attack
+                    Debug.Log("spin attack");
+                    if (!anime.GetSpinAtk())
+                    {
+                        anime.BeginSpinAttack();
+                        //break;
+                    }
+                    else
+                    {
+                        positionTimer += Time.deltaTime;
+                        if(ChangeStateTimer >= Random.Range(7f, 12f))
+                        {
+                            anime.ExitSpinAtk();
+                            fightState = fightStates[0];
+                            //break;
+                        }
+                        else
+                        {
+                            if(positionTimer >= 1)
+                            {
+                                AttackCalculation();
+                                positionTimer = 0;
+                            }
+                            navMesh.SetDestination(player.transform.position);
+                        }
+                    }
                     break;
                 // else if doing the charge attack
                 case "charged attack":
                     //  do the charge attack function
+
+                    fightState = fightStates[0];
                     break;
                 default:
-                    Debug.Log("I think Mike fucked up?");
+                    Debug.Log("I think Mike fucked up? Check the samurai boss ai script");
+                    fightState = fightStates[0];
                     break;
             }
             yield return new WaitForSeconds((1/60));
@@ -128,7 +171,7 @@ public class SamuraiBossAI : MonoBehaviour
             {
                 if (disBetweenMeAndPlayer <= rayLength)
                 {
-                    player.GetComponent<PlayerData>().DecreaseHP(5);
+                    player.GetComponent<PlayerData>().DecreaseHP(5);    //need to do something about this
                 }
             }
         }
@@ -136,13 +179,12 @@ public class SamuraiBossAI : MonoBehaviour
 
     private void WalkToANewSpot()
     {
-        //print("The distance is " + disBetweenMeAndPlayer + " units");
-        if (disBetweenMeAndPlayer <= 5f)
-        {
-            int newTarget = Mathf.FloorToInt(Random.Range(0, targetLocations.Length));
-            //move to a new target
-            navMesh.SetDestination(targetLocations[newTarget].transform.localPosition);
-        }
+        int newTarget = Mathf.FloorToInt(Random.Range(0, targetLocations.Length));
+        //move to a new target
+
+        Debug.Log("Moving to target " + newTarget);
+
+        navMesh.SetDestination(targetLocations[newTarget].transform.localPosition);
     }
 
     #endregion
