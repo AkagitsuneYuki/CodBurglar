@@ -48,6 +48,7 @@ MonoBehaviour:
   loadedAmmo: 1
   maxLoadedAmmo: 1
   infiniteAmmo: 1
+  reloading: 0
 --- !u!1 &8234171800199381635
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +248,7 @@ MonoBehaviour:
   loadedAmmo: 0
   maxLoadedAmmo: 1
   infiniteAmmo: 0
+  reloading: 0
 --- !u!1 &8234171800533143905
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +364,7 @@ MonoBehaviour:
   loadedAmmo: 0
   maxLoadedAmmo: 5
   infiniteAmmo: 0
+  reloading: 0
 --- !u!1 &8234171800597910739
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +436,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68902427c26f2dd44be013ff7bf6cb18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb0b77830bb75284da0f13b0fc3f0310, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -461,6 +464,7 @@ MonoBehaviour:
   loadedAmmo: 15
   maxLoadedAmmo: 15
   infiniteAmmo: 1
+  reloading: 0
 --- !u!1 &8234171801141696876
 GameObject:
   m_ObjectHideFlags: 0

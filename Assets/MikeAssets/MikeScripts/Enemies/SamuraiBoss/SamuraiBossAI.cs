@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class SamuraiBossAI : MonoBehaviour
 {
+    [SerializeField] private int HP;
 
     [SerializeField] private GameObject player;
 
@@ -22,6 +23,23 @@ public class SamuraiBossAI : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     private float disBetweenMeAndPlayer;
+    
+    public void TakeDamage(int dmg)
+    {
+        HP -= dmg;
+        if(HP <= 0)
+        {
+            GameObject.Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Sword")
+        {
+            TakeDamage(3);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -184,7 +202,7 @@ public class SamuraiBossAI : MonoBehaviour
 
         Debug.Log("Moving to target " + newTarget);
 
-        navMesh.SetDestination(targetLocations[newTarget].transform.localPosition);
+        navMesh.SetDestination(targetLocations[newTarget].transform.position);
     }
 
     #endregion

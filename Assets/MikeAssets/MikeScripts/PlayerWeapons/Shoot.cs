@@ -86,6 +86,11 @@ public class Shoot : MonoBehaviour
                 {
                     rayHit.transform.gameObject.GetComponent<Ninja>().TakeDamage(damage);
                 }
+                else if (rayHit.transform.gameObject.TryGetComponent(out SamuraiBossAI samurai))
+                {
+                    //make a ricochet sound
+                    //maybe change the sprite
+                }
             }
         }
         yield return new WaitForSeconds(0.25f);
