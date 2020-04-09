@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Tutorial Text
   - HP
+  - Battery 1
+  - Battery 2
+  - Battery 3
   layers:
   - Default
   - TransparentFX
