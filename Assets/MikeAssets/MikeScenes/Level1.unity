@@ -264,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: The Healy Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
+      objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.75
@@ -470,6 +474,10 @@ PrefabInstance:
     - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_Name
       value: The Healy Gun (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
       objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1851,7 +1859,7 @@ Transform:
   m_GameObject: {fileID: 315255804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.66307, y: 0.66307, z: 0.66307}
   m_Children:
   - {fileID: 530469734}
   - {fileID: 167045388}
@@ -2333,6 +2341,10 @@ PrefabInstance:
     - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_Name
       value: The Healy Gun (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
       objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3103,6 +3115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: The Healy Gun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
+      objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.75
@@ -3210,6 +3226,10 @@ PrefabInstance:
     - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_Name
       value: The Healy Gun (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
       objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3639,6 +3659,10 @@ PrefabInstance:
     - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_Name
       value: The Healy Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
       objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7207,6 +7231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: The Healy Gun (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
+      objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11
@@ -8368,6 +8396,10 @@ PrefabInstance:
     - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_Name
       value: The Healy Gun (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
       objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9571,6 +9603,10 @@ PrefabInstance:
     - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_Name
       value: The Healy Gun (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073601519987020, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
+      propertyPath: m_TagString
+      value: HP
       objectReference: {fileID: 0}
     - target: {fileID: 4594513103428376, guid: fe8602f74c9ddeb47b2b15370b677585, type: 3}
       propertyPath: m_LocalPosition.x

@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public LayerMask layerMask;
     [SerializeField] private float rayLength;
 
+    [SerializeField] private GameObject deathObject;
 
     [SerializeField] private Renderer renderer;
     [SerializeField] private Material highlightMaterial;
@@ -48,6 +49,8 @@ public class Enemy : MonoBehaviour
         health -= dmg;
         if(health <= 0)
         {
+            GameObject fuck = Instantiate(deathObject, transform.position, transform.rotation);
+            fuck.transform.position = new Vector3(transform.position.x, transform.position.y - 1.019f, transform.position.z);
             Destroy(gameObject);
         }
     }

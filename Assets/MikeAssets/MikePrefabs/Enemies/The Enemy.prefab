@@ -235,6 +235,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   rayLength: 50
+  deathObject: {fileID: 2686147625967062850, guid: edaeb8abce6d2bb498bc717463a66428,
+    type: 3}
   renderer: {fileID: 0}
   highlightMaterial: {fileID: 0}
   savedMaterial: {fileID: 0}

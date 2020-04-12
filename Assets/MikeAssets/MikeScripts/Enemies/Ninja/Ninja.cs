@@ -10,6 +10,8 @@ public class Ninja : MonoBehaviour
 
     [SerializeField] private int health;
 
+    [SerializeField] private GameObject deathObject;
+
     private RaycastHit rayHit;
     public LayerMask layerMask;
     [SerializeField] private float rayLength;
@@ -37,6 +39,8 @@ public class Ninja : MonoBehaviour
         health -= dmg;
         if (health <= 0)
         {
+            GameObject fuck = Instantiate(deathObject, transform.position, transform.rotation);
+            fuck.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             Destroy(gameObject);
         }
     }

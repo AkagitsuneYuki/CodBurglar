@@ -14,6 +14,8 @@ public class MeleeCat : MonoBehaviour
     public LayerMask layerMask;
     [SerializeField] private float rayLength;
 
+    [SerializeField] private GameObject deathObject;
+
     [SerializeField] private bool attacking = false;
     [SerializeField] private bool walking = false;
     private bool inAttack;  //this is only needed to prevent the dude from repeatedly switching sprites
@@ -40,6 +42,8 @@ public class MeleeCat : MonoBehaviour
         health -= dmg;
         if (health <= 0)
         {
+            GameObject fuck = Instantiate(deathObject, transform.position, transform.rotation);
+            fuck.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
             Destroy(gameObject);
         }
     }
