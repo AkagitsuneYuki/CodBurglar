@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069b97db02f060046ad14e5eaecb1f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 300
+  HP: 150
   player: {fileID: 1025271548}
   anime: {fileID: 1162489622}
   navMesh: {fileID: 93257095}
@@ -3318,7 +3318,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.57, y: 10.11}
+  m_Size: {x: 13.15, y: 10.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6332,80 +6332,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &3124884558278321526
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645210, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645214, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_Name
-      value: Ninja Death
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124884559347645214, guid: 849656c3e684e194fac27720de2dd4e8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 849656c3e684e194fac27720de2dd4e8, type: 3}
 --- !u!1001 &6645123856445470924
 PrefabInstance:
   m_ObjectHideFlags: 0

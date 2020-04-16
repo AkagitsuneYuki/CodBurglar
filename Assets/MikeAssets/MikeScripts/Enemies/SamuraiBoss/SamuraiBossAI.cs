@@ -88,12 +88,12 @@ public class SamuraiBossAI : MonoBehaviour
             {
                 case "idle":
                     positionTimer += Time.deltaTime;
-                    if(positionTimer > Random.Range(3f, 5f))
+                    if(positionTimer > Random.Range(0.5f, 1f))
                     {
                         WalkToANewSpot();
                         positionTimer = 0;
                     }
-                    if (ChangeStateTimer >= Random.Range(10f, 15f))
+                    if (ChangeStateTimer >= Random.Range(2f, 3f))
                     {
                         positionTimer = 0;
                         fightState = fightStates[Mathf.FloorToInt(Random.Range(0, 4))];
