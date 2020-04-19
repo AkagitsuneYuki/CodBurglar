@@ -25,6 +25,7 @@ public class YakuzaAnimations : MonoBehaviour
 
     private void SetAnimation()
     {
+        // i need to replace these with the final animations
         if (yakuzaRef.IsAttacking())
         {
             GetComponent<SpriteRenderer>().sprite = atk;

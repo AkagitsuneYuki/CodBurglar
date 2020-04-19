@@ -4570,6 +4570,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 477687417338105465, guid: efa16566aa2259147a110fa9b9bd115f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 74f1c206fb1dc1742a0f090c1214aff4,
+        type: 3}
+    - target: {fileID: 477687417338105470, guid: efa16566aa2259147a110fa9b9bd115f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efa16566aa2259147a110fa9b9bd115f, type: 3}
 --- !u!4 &1603639325 stripped
@@ -6078,7 +6089,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shootSound
       value: 
-      objectReference: {fileID: 8300000, guid: 35f81cea1014dc446b195ab2a9234b82, type: 3}
+      objectReference: {fileID: 8300000, guid: cb876f816d20dc5479afd45daba69bf1, type: 3}
     - target: {fileID: 8234171800914626899, guid: cb0a01313d5bae64da130803fa7a0637,
         type: 3}
       propertyPath: dmg

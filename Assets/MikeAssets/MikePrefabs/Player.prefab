@@ -669,7 +669,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 35f81cea1014dc446b195ab2a9234b82, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cb876f816d20dc5479afd45daba69bf1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -985,7 +985,7 @@ MonoBehaviour:
     m_Bits: 51
   impactParticles: {fileID: 7448973247351096953, guid: 7ec392aa38c1f1746a43e34cbac1437e,
     type: 3}
-  shootSound: {fileID: 8300000, guid: e9c7b618f7653f047b0729335acd467f, type: 3}
+  shootSound: {fileID: 8300000, guid: cb876f816d20dc5479afd45daba69bf1, type: 3}
   gun: {fileID: 8234171800597910739}
   canShoot: 1
   gunData: {fileID: 8234171800597910748}

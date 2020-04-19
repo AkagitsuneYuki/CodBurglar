@@ -42,7 +42,7 @@ public class YakuzaCat : MonoBehaviour
             {
                 //Debug.Log("We're not attacking");
                 transform.LookAt(target.transform);
-                transform.rotation = transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+                transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
                 if (Physics.Raycast(location, transform.forward, out rayHit, rayLength, layerMask))
                 {
                     Debug.DrawRay(transform.position, transform.forward, Color.red);
@@ -83,21 +83,12 @@ public class YakuzaCat : MonoBehaviour
                             attacking = false;
                         }
                     }
-                    else
-                    {
-                        //Debug.Log("Hit " + rayHit.transform.gameObject.name);
-                    }
-                }
-                else
-                {
-                    //Debug.Log("raycast did not detect anything");
                 }
             }
             else
             {
                 navMeshAgent.SetDestination(transform.position);
                 walking = false;
-                //Debug.Log("There's no target");
             }
         }
     }
