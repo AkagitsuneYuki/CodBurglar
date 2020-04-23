@@ -31,37 +31,39 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!anime.isPlaying)
+        if(Time.timeScale > 0)
         {
-            swing = false;
-
-            if (Input.GetButtonDown("Fire1") && !block)
+            if (!anime.isPlaying)
             {
-                swing = true;
-                anime.Play();
-            }
+                swing = false;
 
-            if (!swing)
-            {
-                if (Input.GetButton("Fire2"))
+                if (Input.GetButtonDown("Fire1") && !block)
                 {
-                    if (!block)
+                    swing = true;
+                    anime.Play();
+                }
+
+                if (!swing)
+                {
+                    if (Input.GetButton("Fire2"))
                     {
-                        block = true;
-                        transform.localPosition = blockPosition;
-                        transform.localRotation = blockRotation;
+                        if (!block)
+                        {
+                            block = true;
+                            transform.localPosition = blockPosition;
+                            transform.localRotation = blockRotation;
+                        }
+                    }
+                    else
+                    {
+                        block = false;
+                        transform.localPosition = initialPosition;
+                        transform.localRotation = initialRotation;
                     }
                 }
-                else
-                {
-                    block = false;
-                    transform.localPosition = initialPosition;
-                    transform.localRotation = initialRotation;
-                }
             }
+            hitbox.enabled = swing;
         }
-        hitbox.enabled = swing;
-
     }
 
     public bool IsBlocking()

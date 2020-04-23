@@ -23,7 +23,10 @@ public class ThrowingStar : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.forward * speed;
+        if (Time.timeScale > 0)
+        {
+            transform.position += transform.forward * speed;
+        }
     }
 
     private void FixedUpdate()
