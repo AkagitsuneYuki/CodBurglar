@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
             if(boss == null)
             {
                 goingToTBC = true;
-                StartCoroutine(GoToTBC());
+                //StartCoroutine(GoToTBC());
             }
         }
     }
