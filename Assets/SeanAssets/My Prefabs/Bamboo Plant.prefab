@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.9194336, y: 7.324192, z: 0.38900757}
-  m_Center: {x: -0.79743195, y: -1.7136211, z: -0.023117065}
+  m_Size: {x: 4.9194336, y: 7.1495132, z: 0.010261536}
+  m_Center: {x: -0.79743195, y: -1.8009605, z: -0.064403534}
 --- !u!1 &7745154791917216217
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2664054460897857114}
   - component: {fileID: 6152138432877709075}
-  - component: {fileID: 5537050536920070078}
   m_Layer: 0
   m_Name: bamboo plant
   m_TagString: Untagged
@@ -127,15 +126,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5537050536920070078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7745154791917216217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1661f0933c96b7d44a42fa919afc647c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

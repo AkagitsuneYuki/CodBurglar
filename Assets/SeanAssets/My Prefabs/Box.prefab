@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8940323334454429706}
   - component: {fileID: 1451143572445170022}
-  - component: {fileID: 7932833663365192063}
+  - component: {fileID: 2470791255534094321}
   m_Layer: 0
   m_Name: cat box
   m_TagString: Untagged
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7932833663365192063
+--- !u!114 &2470791255534094321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
