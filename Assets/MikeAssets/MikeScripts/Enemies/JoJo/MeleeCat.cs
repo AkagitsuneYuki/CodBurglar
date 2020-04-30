@@ -50,8 +50,10 @@ public class MeleeCat : MonoBehaviour
 
     private void OnAttack()
     {
+        transform.LookAt(target.transform);
         if (Physics.Raycast(transform.position, transform.forward, out rayHit, 1f, layerMask))
         {
+            transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
             if (rayHit.transform.gameObject.tag == "Player")
             {
                 Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
@@ -74,17 +76,23 @@ public class MeleeCat : MonoBehaviour
         {
             if (!inAttack)
             {
+                //we make the jojo at the same y-pos as the player
+                Vector3 rayPos = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
+                //store the current pos in a buffer
+                Vector3 buffer = transform.position;
+                //set the pos to the new pos
+                transform.position = rayPos;
+
                 transform.LookAt(target.transform);
-                transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+
                 if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
                 {
-                    Debug.DrawRay(transform.position, transform.forward, Color.red);
+                    Debug.DrawRay(buffer, transform.forward * 10, Color.red);
+                    transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
                     if (rayHit.transform.gameObject.tag == "Player")
                     {
-                        Vector2 curPos = new Vector2(transform.position.x, transform.position.z);
-                        Vector2 playerPos = new Vector2(target.transform.position.x, target.transform.position.z);
-
-                        float dis = Vector2.Distance(curPos, playerPos);
+                        float dis = Vector3.Distance(transform.position, target.transform.position);
+                        transform.position = buffer;
                         // this is probably a shitty way to do this but I'm lazy so  ¯\_(ツ)_/¯
                         if (dis <= rayLength)
                         {
@@ -111,13 +119,16 @@ public class MeleeCat : MonoBehaviour
                         }
                     }
                 }
+                    transform.position = buffer;
             }
             else
             {
+                //transform.position = buffer;
                 navMeshAgent.SetDestination(transform.position);
                 walking = false;
             }
-        } 
+        }
+        transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -273,7 +273,7 @@ MonoBehaviour:
   health: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 307
   rayLength: 100
   deathObject: {fileID: 4584505610630076767, guid: 0f064750da774a84aadd83bf497cf788,
     type: 3}
