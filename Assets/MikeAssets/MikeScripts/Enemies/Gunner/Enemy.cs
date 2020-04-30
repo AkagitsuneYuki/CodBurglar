@@ -75,7 +75,17 @@ public class Enemy : MonoBehaviour
     {
         if(target != null)
         {
+            //store the current pos in a buffer
+            Vector3 buffer = transform.position;
+            if (target.transform.position.y > transform.position.y)
+            {
+                Vector3 location = transform.position;
+                //we make the jojo at the same y-pos as the player
+                Vector3 rayPos = new Vector3(location.x, target.transform.position.y, location.z);
 
+                //set the pos to the new pos
+                transform.position = rayPos;
+            }
             if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
             {
                 if (rayHit.transform.gameObject.tag == "Player")
@@ -112,7 +122,7 @@ public class Enemy : MonoBehaviour
                 }
             }
 
-            
+            transform.position = buffer;
         }
         else
         {

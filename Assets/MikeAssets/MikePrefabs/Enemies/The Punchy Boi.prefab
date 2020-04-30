@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a74c89728461649b08a9fb2447c750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 7703222521013434295}
   health: 5
   layerMask:
     serializedVersion: 2

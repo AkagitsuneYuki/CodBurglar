@@ -260,7 +260,7 @@ MonoBehaviour:
   maxAmmo: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 307
   player: {fileID: 0}
   sprite: {fileID: 7587257191357968115}
   shootSprite: {fileID: 21300000, guid: b4bd3e0db0c56aa41ba923cb63fddd3d, type: 3}

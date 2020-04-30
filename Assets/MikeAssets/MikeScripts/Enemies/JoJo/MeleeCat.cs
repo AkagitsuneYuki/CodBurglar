@@ -76,12 +76,17 @@ public class MeleeCat : MonoBehaviour
         {
             if (!inAttack)
             {
-                //we make the jojo at the same y-pos as the player
-                Vector3 rayPos = new Vector3(transform.position.x, target.transform.position.y, transform.position.z);
                 //store the current pos in a buffer
                 Vector3 buffer = transform.position;
-                //set the pos to the new pos
-                transform.position = rayPos;
+                if (target.transform.position.y > transform.position.y)
+                {
+                    Vector3 location = transform.position;
+                    //we make the jojo at the same y-pos as the player
+                    Vector3 rayPos = new Vector3(location.x, target.transform.position.y, location.z);
+
+                    //set the pos to the new pos
+                    transform.position = rayPos;
+                }
 
                 transform.LookAt(target.transform);
 

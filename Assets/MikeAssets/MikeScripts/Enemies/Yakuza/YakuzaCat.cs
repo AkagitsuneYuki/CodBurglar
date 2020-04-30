@@ -32,6 +32,12 @@ public class YakuzaCat : MonoBehaviour
         FollowPlayer();
     }
 
+    public void exitAtk()
+    {
+        inAttack = false;
+        attacking = false;
+    }
+
     private void FollowPlayer()
     {
         Vector3 location = transform.position + transform.up;
@@ -40,12 +46,17 @@ public class YakuzaCat : MonoBehaviour
             //Debug.Log("Target found!");
             if (!inAttack)
             {
-                //we make the jojo at the same y-pos as the player
-                Vector3 rayPos = new Vector3(location.x, target.transform.position.y, location.z);
                 //store the current pos in a buffer
                 Vector3 buffer = transform.position;
-                //set the pos to the new pos
-                transform.position = rayPos;
+                if (target.transform.position.y > transform.position.y)
+                {
+                    //we make the jojo at the same y-pos as the player
+                    Vector3 rayPos = new Vector3(location.x, target.transform.position.y, location.z);
+                    
+                    //set the pos to the new pos
+                    transform.position = rayPos;
+                }
+                
 
                 transform.LookAt(target.transform);
                 if (Physics.Raycast(transform.position, transform.forward, out rayHit, rayLength, layerMask))
@@ -79,7 +90,7 @@ public class YakuzaCat : MonoBehaviour
                                 attacking = true;
                                 walking = false;
                                 inAttack = true;
-                                StartCoroutine(Attack());
+                                //StartCoroutine(Attack());
                             }
                         }
                         else
@@ -100,7 +111,7 @@ public class YakuzaCat : MonoBehaviour
         }
     }
 
-    private void OnAttack()
+    public void OnAttack()
     {
         Vector3 location = transform.position + transform.up;
         if (Physics.Raycast(location, transform.forward, out rayHit, 1f, layerMask))
@@ -118,7 +129,7 @@ public class YakuzaCat : MonoBehaviour
 
     IEnumerator Attack()
     {
-        OnAttack();
+        //OnAttack();
         yield return new WaitForSeconds(1);
         attacking = false;
         yield return new WaitForSeconds(0.5f);

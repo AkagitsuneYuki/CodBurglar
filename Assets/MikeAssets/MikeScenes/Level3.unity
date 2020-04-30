@@ -1164,6 +1164,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 718573554}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2239699023947704277, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Name
@@ -4033,6 +4048,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 718573554}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2239699023947704277, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Name
@@ -5555,6 +5585,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 718573554}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2239699023947704277, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -8435,6 +8480,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 718573554}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2239699023947704277, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
       propertyPath: m_Name
@@ -10020,6 +10080,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 718573554}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2239699023947704277, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -12191,6 +12266,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 718573554}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239165831162647851, guid: f593bd7cce71f17479a4025617ccdf69,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2239699023947704277, guid: f593bd7cce71f17479a4025617ccdf69,
         type: 3}
@@ -19653,6 +19743,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477687417338105465, guid: efa16566aa2259147a110fa9b9bd115f,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 477687417338105465, guid: efa16566aa2259147a110fa9b9bd115f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 477687417338105465, guid: efa16566aa2259147a110fa9b9bd115f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 11.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efa16566aa2259147a110fa9b9bd115f, type: 3}
